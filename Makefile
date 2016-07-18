@@ -1,4 +1,4 @@
-.PHONY: test start stop reload install
+.PHONY: test start stop reload setup
 CURRENT_DIR = ${PWD}
 CONFIG_FILE = conf/nginx.conf
 NGINX = nginx
@@ -16,6 +16,6 @@ stop:
 reload:
 	sudo $(NGINX_CMD) -s reload
 
-install:
+setup:
 	rsync -a --delete html.init/ html/
 	mkdir -p logs
